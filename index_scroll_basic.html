@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normal scroll</title>
+    <style>
+        .innerDiv {
+
+            width: 400px;
+            height: 800px;
+            background-image: linear-gradient(coral, blue, yellow);
+
+
+        }
+
+        .outerDiv {
+
+            width: 400px;
+            height: 300px;
+            overflow: scroll;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outerDiv">
+        <div class="innerDiv">
+
+
+        </div>
+
+    </div>
+
+
+    <script>
+        let scrollDistance = document.querySelector(".outerDiv").scrollHeight - document.querySelector(".outerDiv").clientHeight;
+        console.log("scrollDistance", scrollDistance);
+
+        document.querySelector(".outerDiv").addEventListener("scroll", scrollFunc);
+
+        function scrollFunc(evt) {
+
+            // pixels from top
+            console.log("Scrolltop", evt.target.scrollTop);
+
+            // log of querySelectors
+            // console.log("outerDiv ScrollHeight", document.querySelector(".outerDiv").scrollHeight)
+            // console.log("outerDiv clientHeight", document.querySelector(".outerDiv").clientHeight)
+
+            let scrollRatio = evt.target.scrollTop / scrollDistance;
+
+            // How far you can scroll
+            console.log("Scrolltop ratio", scrollRatio);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+/* body {
+    background-color: limegreen;
+    scroll-behavior: smooth;
+} */
+
+
+.outerVideoContainer {
+    height: 400px;
+    overflow: scroll;
+}
+
+.innerVideoContainer {
+    height: 1200px;
+}
+
+video {
+    position: fixed;
+}
